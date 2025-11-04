@@ -21,7 +21,14 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->configureSecureUrls();
+        $this->configureDatabase();
     }
+
+    protected function configureDatabase()
+    {
+        Model::automaticallyEagerLoadRelationships();
+    } 
+
 
     protected function configureSecureUrls()
     {
