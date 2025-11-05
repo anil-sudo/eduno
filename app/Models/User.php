@@ -70,9 +70,9 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
     public function getFilamentAvatarUrl(): ?string
     {
         // If user has uploaded an avatar, return its CDN URL
-        // if (!empty($this->avatar)) {
-        //     return getCdnUrl($this->avatar);
-        // }
+        if (!empty($this->avatar)) {
+            return getCdnUrl($this->avatar);
+        }
 
         // Otherwise, generate a fallback avatar using Boring Avatars
         $name = str($this->name)
