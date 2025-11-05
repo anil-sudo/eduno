@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('opengraphs', function (Blueprint $table) {
             $table->id();
+
+            $table->string('name');
+            $table->string('slug')->unique();
+            $table->string('description')->nullable();
+            $table->foreignId('media_id')->nullable()->constrained()->cascadeOnDelete();
+            $table->longText('content')->nullable();
+            
             $table->timestamps();
         });
     }
