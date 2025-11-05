@@ -52,7 +52,7 @@ class UserForm
                             ->previewable()
                             ->deletable()
                             ->disk('r2') 
-                            ->directory('dhaugoda/media/avatar')
+                            ->directory('eduno/media/avatar')
                             ->maxSize(128),
                     ])
                     ->columnSpanFull(),
