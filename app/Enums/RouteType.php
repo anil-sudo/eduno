@@ -42,10 +42,10 @@ enum RouteType: string implements HasLabel
     {
         return match ($this) {
             self::Landing        => 'Home',
+            self::About          => 'About',            
             self::Error          => 'Error',
             self::Contact        => 'Contact',
             self::Search         => 'Search',
-            self::About          => 'About',            
         };
     }
 }
