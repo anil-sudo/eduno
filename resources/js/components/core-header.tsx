@@ -23,6 +23,7 @@ import {
   NavigationMenuTrigger,
   NavigationMenuContent,
 } from "@/components/ui/navigation-menu";
+import AppLogo from "@/components/app-logo";
 
 function ListItem({ title, href, children }: {title: any, href: any, children: any}) {
   return (
@@ -133,26 +134,14 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-sm">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <div className="flex items-center space-x-2">
-          <Link href="/" className="text-xl font-bold tracking-tight">
-            MyApp
+          <Link href="/">
+              <AppLogo />
           </Link>
         </div>
 
         <div className="hidden md:flex items-center space-x-6">
             <NavigationMenu>
                 <NavigationMenuList>
-                {/* Home */}
-                <NavigationMenuItem>
-                    <NavigationMenuLink asChild>
-                    <Link
-                        href="/"
-                        className="text-sm font-medium transition-colors hover:text-foreground"
-                    >
-                        Home
-                    </Link>
-                    </NavigationMenuLink>
-                </NavigationMenuItem>
-
                 {["Notes", "Solution", "MCQ", "Board Question"].map((section) =>
                     renderDropdown(section)
                 )}

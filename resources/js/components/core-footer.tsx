@@ -1,6 +1,7 @@
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { Link } from "@inertiajs/react";
+import AppLogo from "@/components/app-logo";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -10,7 +11,9 @@ export default function Footer() {
       <div className="container mx-auto px-4 py-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h2 className="text-xl font-semibold tracking-tight">Eduno</h2>
+            <div className="flex">
+              <AppLogo />
+            </div>
             <p className="text-sm text-muted-foreground mt-2">
               Your go-to platform for mastering Bachelor CS.
             </p>
@@ -20,7 +23,7 @@ export default function Footer() {
             <h3 className="text-sm font-semibold mb-3">Quick Links</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <Link href="/" className="hover:text-foreground transition-colors">
+                <Link href="/">
                   Home
                 </Link>
               </li>
